@@ -1,5 +1,5 @@
 const { Markup } = require('telegraf')
-const { BUTTONS, OWNER_ID, GIRLFRIEND_ID, getKeyboard } = require('../utils/constants')
+const { BUTTONS, EMOJI_MAP, OWNER_ID, GIRLFRIEND_ID, getKeyboard } = require('../utils/constants')
 
 function isAllowed(userId) {
   return userId === OWNER_ID || userId === GIRLFRIEND_ID
@@ -25,6 +25,8 @@ module.exports = (bot) => {
     BUTTONS.REGULAR_MRRRR,
     BUTTONS.GENTLE_MRRRR,
     BUTTONS.PLAYFUL_MRRRR,
+    BUTTONS.GOODNIGHT_MRRRR,
+    BUTTONS.MISSING_MRRRR,
     BUTTONS.AGGRESSIVE_MRRRR,
     BUTTONS.HUNGRY_MRRRR,
     BUTTONS.IRRITATED_MRRRR
@@ -34,10 +36,10 @@ module.exports = (bot) => {
     const text = ctx.message.text
     const recipientId = getRecipientId(ctx.from.id)
     const recipientMessage = ctx.from.id === OWNER_ID
-      ? `Ваш молодой человек отправил вам ${text.toLowerCase()}`
-      : `Ваша девушка отправила вам ${text.toLowerCase()}`
+      ? `<b>Ваш молодой человек отправил вам ${text.toLowerCase()} ${EMOJI_MAP[text]}</b>`
+      : `<b>Ваша девушка отправила вам ${text.toLowerCase()} ${EMOJI_MAP[text]}</b>`
 
-    ctx.reply(`${text} отправлено!`)
-    ctx.telegram.sendMessage(recipientId, recipientMessage)
+    ctx.reply(`<i>${text} отправлено!</i>`, { parse_mode: 'HTML' })
+    ctx.telegram.sendMessage(recipientId, recipientMessage, { parse_mode: 'HTML' })
   })
 }
