@@ -22,7 +22,7 @@ module.exports = (bot) => {
   })
 
   bot.hears([
-    BUTTONS.REGULAR_MRRRR,
+    BUTTONS.MORNING_MRRRR,
     BUTTONS.GENTLE_MRRRR,
     BUTTONS.PLAYFUL_MRRRR,
     BUTTONS.GOODNIGHT_MRRRR,

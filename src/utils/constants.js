@@ -1,5 +1,5 @@
 const BUTTONS = {
-  REGULAR_MRRRR: 'Обычное мрррр',
+  MORNING_MRRRR: 'Доброутреннее мрррр',
   GENTLE_MRRRR: 'Ласковое мрррр',
   PLAYFUL_MRRRR: 'Игривое мрррр',
   GOODNIGHT_MRRRR: 'Мрррр перед сном',
@@ -10,7 +10,7 @@ const BUTTONS = {
 }
 
 const EMOJI_MAP = {
-  [BUTTONS.REGULAR_MRRRR]: '😊',
+  [BUTTONS.MORNING_MRRRR]: '☀️',
   [BUTTONS.GENTLE_MRRRR]: '🥰',
   [BUTTONS.PLAYFUL_MRRRR]: '😏',
   [BUTTONS.GOODNIGHT_MRRRR]: '😴',
@@ -23,7 +23,7 @@ const EMOJI_MAP = {
 function getKeyboard() {
   return [
     [
-      BUTTONS.REGULAR_MRRRR,
+      BUTTONS.MORNING_MRRRR,
       BUTTONS.MISSING_MRRRR
     ],
     [
